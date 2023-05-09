@@ -50,4 +50,5 @@ RUN ninja -C output/release install
 # copy settings to /etc from the directory which you set.
 COPY ${settingsFile} /etc/mpd.conf
 
-CMD ["mpd", "/etc/mpd.conf"]
+# RUN mpd command with no daemon option to run in foreground
+CMD ["mpd", "--no-daemon", "/etc/mpd.conf"]
